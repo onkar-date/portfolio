@@ -1,0 +1,49 @@
+// .card-wrapper{
+//     position: relative;
+//     height: 200px;
+// }
+// .project-card{
+//     position: absolute;
+//     height: 100%;
+//     width: 100%;
+//     transform-style: preserve-3d;
+//     transition: transform 0.7s ease;
+//     border-radius: 10px;
+//     .front, .back{
+//         position: absolute;
+//         height: 100%;
+//         width: 100%;
+//         backface-visibility: hidden;
+//         border-radius: 10px;
+//     }
+//     .front{
+//         background: yellow;
+//         box-shadow: 1px 1px 10px;
+//     }
+//     .back{
+//         background: white;
+//         box-shadow: 1px 1px 10px;
+//         transform: rotateY(180deg);
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+//     }
+// }
+
+// .project-card:hover{
+//     transform: rotateY(180deg);
+// }
+
+.card-wrapper{
+    position: relative;
+    height: 250px;
+    background-color: white;
+    .project-card{
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+}

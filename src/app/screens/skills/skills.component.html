@@ -1,0 +1,26 @@
+<div [id]="scrollingIds.skills">
+  <div class="row">
+    <div class="col-12">
+      <h3 class="text-muted">My Skills</h3>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-12">
+      <div class="skills-wrapper shadow" id="skillsWrapper">
+        <div class="skill" *ngFor="let skill of skillsList">
+          <div class="skill-label">
+            <div class="d-flex justify-content-between">
+              <span>{{ skill.label }}</span>
+              <span>{{ skill.level }}</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-level {{ skill.class }}"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>

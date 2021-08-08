@@ -1,0 +1,97 @@
+@media only screen and(max-width: 768px) {
+    .web-graphic{
+        display: none !important;
+    }
+}
+
+// skills
+.skills-wrapper{
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    .skill{
+        margin-bottom: 1rem;
+        .skill-bar{
+            width: 100%;
+            background-color: #efecec;
+            height: 15px;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+        .skill-bar .skill-level{
+            background-color: $custom-secondary;
+            height: 100%;
+            border-radius: 5px;
+        }
+    }
+}
+
+.skill-level.angular{
+    width: 75%;
+}
+
+.skill-level.javascript{
+    width: 70%;
+}
+
+.skill-level.html{
+    width: 80%;
+}
+
+.skill-level.css{
+    width: 60%;
+}
+
+.start-animation.skills-wrapper{
+    .skill-level.angular{
+        animation: animate-angular 1s ease;
+    }
+    
+    .skill-level.javascript{
+        animation: animate-javascript 1s ease;
+    }
+    
+    .skill-level.html{
+        animation: animate-html 1s ease;
+    }
+    
+    .skill-level.css{
+        animation: animate-css 1s ease;
+    }
+}
+
+@keyframes animate-angular {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 75%;
+    }
+}
+
+@keyframes animate-javascript {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 70%;
+    }
+}
+
+@keyframes animate-html {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 80%;
+    }
+}
+
+@keyframes animate-css {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 60%;
+    }
+}

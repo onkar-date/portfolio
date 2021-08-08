@@ -1,0 +1,23 @@
+nav.navbar{
+    background-color: $custom-primary;
+    .navbar-brand{
+        img{
+            height: 5rem;
+        }
+    }
+}
+
+@media only screen and(min-width: 992px) {
+    nav.navbar{
+        ul > li{
+            display: flex;
+            align-items: center;
+            margin-right: 1rem;
+        }
+        ul > li::after{
+            content: "/";
+            margin-left: 0.5rem;
+            color: gray;
+        }
+    }
+}
