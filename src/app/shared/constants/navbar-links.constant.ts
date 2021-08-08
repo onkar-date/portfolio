@@ -10,10 +10,6 @@ export const NavbarLinks = [
     id: scrollingIds.skills
   },
   {
-    title: 'About me',
-    id: scrollingIds.aboutMe
-  },
-  {
     title: 'Contact me',
     id: scrollingIds.contactMe
   }

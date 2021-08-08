@@ -26,72 +26,21 @@
     }
 }
 
-.skill-level.angular{
-    width: 75%;
-}
-
-.skill-level.javascript{
-    width: 70%;
-}
-
-.skill-level.html{
-    width: 80%;
-}
-
-.skill-level.css{
-    width: 60%;
+.skill-level{
+    width: var(--skill-level-percent);
 }
 
 .start-animation.skills-wrapper{
-    .skill-level.angular{
-        animation: animate-angular 1s ease;
-    }
-    
-    .skill-level.javascript{
-        animation: animate-javascript 1s ease;
-    }
-    
-    .skill-level.html{
-        animation: animate-html 1s ease;
-    }
-    
-    .skill-level.css{
-        animation: animate-css 1s ease;
+    .skill-level{
+        animation: animate-skill-level 1s ease;
     }
 }
 
-@keyframes animate-angular {
+@keyframes animate-skill-level {
     0%{
         width: 0%;
     }
     100%{
-        width: 75%;
-    }
-}
-
-@keyframes animate-javascript {
-    0%{
-        width: 0%;
-    }
-    100%{
-        width: 70%;
-    }
-}
-
-@keyframes animate-html {
-    0%{
-        width: 0%;
-    }
-    100%{
-        width: 80%;
-    }
-}
-
-@keyframes animate-css {
-    0%{
-        width: 0%;
-    }
-    100%{
-        width: 60%;
+        width: var(--skill-level-percent);
     }
 }

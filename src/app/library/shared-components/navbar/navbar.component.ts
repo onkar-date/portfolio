@@ -1,5 +1,4 @@
 import { NavbarLinks } from './../../../shared/constants/navbar-links.constant';
-import { ScrollingIds } from './../../../shared/constants/scrolling-Id.constant';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -19,7 +18,8 @@ export class NavbarComponent implements OnInit {
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({
-        behavior: 'smooth'
+        behavior: 'smooth',
+        block: 'center'
       });
     }
   }

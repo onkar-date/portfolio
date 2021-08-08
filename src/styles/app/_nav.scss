@@ -2,7 +2,7 @@ nav.navbar{
     background-color: $custom-primary;
     .navbar-brand{
         img{
-            height: 5rem;
+            height: 3rem;
         }
     }
 }
@@ -14,7 +14,7 @@ nav.navbar{
             align-items: center;
             margin-right: 1rem;
         }
-        ul > li::after{
+        ul > li:not(:last-child)::after{
             content: "/";
             margin-left: 0.5rem;
             color: gray;

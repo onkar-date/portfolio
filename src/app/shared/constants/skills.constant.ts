@@ -1,22 +1,18 @@
 export const Skills = [
   {
     label: 'Angular',
-    level: '75%',
-    class: 'angular'
+    level: '75%'
   },
   {
     label: 'JavaScript',
-    level: '70%',
-    class: 'javascript'
+    level: '70%'
   },
   {
     label: 'HTML',
-    level: '80%',
-    class: 'html'
+    level: '80%'
   },
   {
     label: 'CSS',
-    level: '60%',
-    class: 'css'
-  },
-]
+    level: '60%'
+  }
+];

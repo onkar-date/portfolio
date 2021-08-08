@@ -1,19 +1,34 @@
-<div class="container-fluid bg-dark text-white mt-5">
-    <div class="row pt-2">
-        <div class="col-12">
-            <div class="d-flex justify-content-center">
-                <h4 [id]="scrollingIds.contactMe">Like my work? Contact me at</h4>
-            </div>
-        </div>
- 
-        <div class="col-12 my-4 footer">
-            <div class="d-flex justify-content-around">
-                <div *ngFor="let contact of social">
-                    <button class="btn no-style" (click)="visit(contact)">
-                        <i class="{{contact.class}}"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
+<div class="container-fluid bg-dark text-white mt-5 footer-text">
+  <div class="row pt-2">
+    <div class="col-12">
+      <div class="d-flex justify-content-center">
+        <h4 [id]="scrollingIds.contactMe">Like my work? Contact me at</h4>
+      </div>
     </div>
+
+    <div class="col-12 my-4 footer">
+      <div class="d-flex justify-content-around">
+        <div *ngFor="let contact of social">
+          <button class="btn no-style" (click)="visit(contact)">
+            <i class="{{ contact.class }}"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 d-flex justify-content-center h5">
+      <span>&copy; onkar-date</span>
+    </div>
+    <div class="col-12 d-flex justify-content-center">
+      <div>
+        Icons made by
+        <a href="https://www.flaticon.com/authors/surang" title="surang"
+          >surang</a
+        >
+        from
+        <a href="https://www.flaticon.com/" title="Flaticon"
+          >www.flaticon.com</a
+        >
+      </div>
+    </div>
+  </div>
 </div>
