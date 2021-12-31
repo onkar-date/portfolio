@@ -1,5 +1,5 @@
+import { ProjectService } from './../../shared/services/project.service';
 import { Component, OnInit } from '@angular/core';
-import { Projects } from 'src/app/shared/constants/projectList.constant';
 import { ScrollingIds } from 'src/app/shared/constants/scrolling-Id.constant';
 
 @Component({
@@ -10,15 +10,22 @@ import { ScrollingIds } from 'src/app/shared/constants/scrolling-Id.constant';
 })
 export class MyProjectsComponent implements OnInit {
 
-  projects = Projects;
+  projects = [];
   scrollingIds = ScrollingIds;
-  constructor() { }
+  constructor(
+    private projectService: ProjectService
+  ) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    this.projects = await this.getProjects();
+  }
+
+  async getProjects(): Promise<any> {
+    return await this.projectService.getProjects();
   }
 
   openProject(project): void {
-    window.open(project.link, 'blank');
+    window.open(project.url, 'blank');
   }
 
 }

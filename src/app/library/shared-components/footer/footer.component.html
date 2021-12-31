@@ -8,13 +8,14 @@
 
     <div class="col-12 my-4 footer">
       <div class="d-flex justify-content-around">
-        <div *ngFor="let contact of social">
+        <div *ngFor="let contact of socialMedia">
           <button class="btn no-style" (click)="visit(contact)">
-            <i class="{{ contact.class }}"></i>
+            <i class="fa fa-2x {{ contact.faClass }}"></i>
           </button>
         </div>
       </div>
     </div>
+
     <div class="col-12 d-flex justify-content-center h5">
       <span>&copy; onkar-date</span>
     </div>

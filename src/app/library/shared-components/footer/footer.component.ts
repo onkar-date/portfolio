@@ -1,6 +1,6 @@
+import { SocialService } from './../../../shared/services/social.service';
 import { Component, OnInit } from '@angular/core';
 import { ScrollingIds } from 'src/app/shared/constants/scrolling-Id.constant';
-import { SocialMedia } from 'src/app/shared/constants/social.constant';
 
 @Component({
   selector: 'app-footer',
@@ -9,15 +9,22 @@ import { SocialMedia } from 'src/app/shared/constants/social.constant';
   ]
 })
 export class FooterComponent implements OnInit {
-  social = SocialMedia;
   scrollingIds = ScrollingIds;
-  constructor() { }
+  socialMedia = null;
+  constructor(
+    private socialMediaService: SocialService
+  ) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    this.socialMedia = await this.getSocialMediaDetails();
+  }
+
+  async getSocialMediaDetails(): Promise<any> {
+    return await this.socialMediaService.getSocialMediaDetails();
   }
 
   visit(contact): void {
-    window.open(contact.url, '_blank')
+    window.open(contact.url, '_blank');
   }
 
 }

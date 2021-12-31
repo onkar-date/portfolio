@@ -8,5 +8,4 @@ export class DynamicEnvironment {
 
 export interface IEnvironmentVariable {
     baseUrl: string;
-    baseUrlCovin: string;
 }

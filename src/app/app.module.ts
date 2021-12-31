@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppInitService } from './shared/services/app-init.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 
 export function init_app(appInitService: AppInitService): any {
@@ -23,7 +24,8 @@ export function init_app(appInitService: AppInitService): any {
     BrowserModule,
     AppRoutingModule,
     ScreensModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [
     AppInitService,

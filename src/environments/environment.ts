@@ -1,12 +1,5 @@
-import { DynamicEnvironment } from './dynamic-environment';
+export const environment = {
+  production: false,
+  baseUrl: 'http://localhost:3000'
+};
 
-class Environment extends DynamicEnvironment {
-  public production: boolean;
-
-  constructor() {
-    super();
-    this.production = false;
-  }
-}
-
-export const environment = new Environment();

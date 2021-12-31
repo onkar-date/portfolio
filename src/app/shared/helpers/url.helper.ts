@@ -1,7 +1,6 @@
-class UrlHelper {
-    createUrl = (params): string => {
+export default class UrlHelper {
+
+    static createUrl(params): string {
         return params.join('/');
     }
 }
-
-export const urlHelper = new UrlHelper();

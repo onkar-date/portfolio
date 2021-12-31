@@ -1,26 +1,35 @@
-<div [id]="scrollingIds.skills">
-  <div class="row">
-    <div class="col-12">
-      <h3 class="text-muted">My Skills</h3>
-    </div>
+<div class="row" [id]="scrollingIds.skills">
+  <div class="col-12">
+    <h3 class="text-muted">My Skills</h3>
   </div>
-  
-  <div class="row">
-    <div class="col-12">
-      <div class="skills-wrapper shadow" id="skillsWrapper">
-        <div class="skill" *ngFor="let skill of skillsList">
-          <div class="skill-label">
-            <div class="d-flex justify-content-between">
-              <span>{{ skill.label }}</span>
-              <span>{{ skill.level }}</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-level" style="--skill-level-percent:{{skill.level}}"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
 </div>
+
+<div
+  class="row skills-wrapper shadow"
+  *ngIf="skillsData?.skills; else skillsPh"
+>
+  <div
+    class="col-lg-4 col-md-6 col-sm-6 my-3"
+    *ngFor="let skill of skillsData?.skills"
+  >
+    <div class="d-flex flex-column align-items-center">
+      <img
+        src="data:image/png;base64,{{ skill.base64Data }}"
+        alt="{{ skill.label }}"
+        class="skill-img"
+      />
+      <strong>{{ skill.label }}</strong>
+    </div>
+  </div>
+</div>
+
+<!-- Placeholders -->
+
+<!-- Skills Placeholder -->
+<ng-template #skillsPh>
+  <div class="row skills-wrapper shadow d-flex justify-content-center">
+    <div class="spinner-grow skills-spinner mr-3" role="status" *ngFor="let i of [].constructor(4)">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</ng-template>
