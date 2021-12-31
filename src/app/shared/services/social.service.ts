@@ -1,3 +1,4 @@
+import { UrlEndpoints } from './../constants/urlConstant';
 import { ApiMethod } from './../constants/api';
 import { WrapperService } from './wrapper.service';
 import { Injectable } from '@angular/core';
@@ -14,7 +15,7 @@ export class SocialService {
   ) { }
 
   async getSocialMediaDetails(): Promise<any> {
-    const socialMediaDetailsUrl = UrlHelper.createUrl([environment.baseUrl, 'social']);
+    const socialMediaDetailsUrl = UrlHelper.createUrl([environment.baseUrl, UrlEndpoints.social]);
     return await this.apiService.Api(ApiMethod.GET, socialMediaDetailsUrl);
   }
 }

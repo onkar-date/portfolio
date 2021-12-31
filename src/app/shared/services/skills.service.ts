@@ -1,3 +1,4 @@
+import { UrlEndpoints } from './../constants/urlConstant';
 import { environment } from './../../../environments/environment';
 import { ApiMethod } from './../constants/api';
 import { WrapperService } from './wrapper.service';
@@ -13,7 +14,7 @@ export class SkillsService {
   ) { }
 
   async getSkillsData(): Promise<any> {
-    const skillsDataUrl = UrlHelper.createUrl([environment.baseUrl, 'skills']);
+    const skillsDataUrl = UrlHelper.createUrl([environment.baseUrl, UrlEndpoints.skills]);
     return await this.apiService.Api(ApiMethod.GET, skillsDataUrl);
   }
 }

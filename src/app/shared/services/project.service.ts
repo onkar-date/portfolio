@@ -1,3 +1,4 @@
+import { UrlEndpoints } from './../constants/urlConstant';
 import { ApiMethod } from './../constants/api';
 import { WrapperService } from './wrapper.service';
 import { Injectable } from '@angular/core';
@@ -13,7 +14,9 @@ export class ProjectService {
   ) { }
 
   async getProjects(): Promise<any> {
-    const projectUrl = `${environment.baseUrl}/${UrlHelper.createUrl(['projects'])}`;
+    const projectUrl = UrlHelper.createUrl([environment.baseUrl, UrlEndpoints.projects]);
+    console.log(projectUrl);
+    
     return await this.apiService.Api(ApiMethod.GET, projectUrl);
   }
 }
