@@ -1,4 +1,4 @@
-import { ProjectService } from './../../shared/services/project.service';
+import { MyDataService } from './../../shared/services/my-data.service';
 import { Component, OnInit } from '@angular/core';
 import { ScrollingIds } from 'src/app/shared/constants/scrolling-Id.constant';
 
@@ -13,7 +13,7 @@ export class MyProjectsComponent implements OnInit {
   projects = [];
   scrollingIds = ScrollingIds;
   constructor(
-    private projectService: ProjectService
+    private myDataService: MyDataService
   ) { }
 
   async ngOnInit(): Promise<void> {
@@ -21,7 +21,7 @@ export class MyProjectsComponent implements OnInit {
   }
 
   async getProjects(): Promise<any> {
-    return await this.projectService.getProjects();
+    return await this.myDataService.getProjects();
   }
 
   openProject(project): void {

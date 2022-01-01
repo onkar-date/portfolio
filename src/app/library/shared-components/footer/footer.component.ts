@@ -1,4 +1,4 @@
-import { SocialService } from './../../../shared/services/social.service';
+import { MyDataService } from './../../../shared/services/my-data.service';
 import { Component, OnInit } from '@angular/core';
 import { ScrollingIds } from 'src/app/shared/constants/scrolling-Id.constant';
 
@@ -12,7 +12,7 @@ export class FooterComponent implements OnInit {
   scrollingIds = ScrollingIds;
   socialMedia = null;
   constructor(
-    private socialMediaService: SocialService
+    private myDataService: MyDataService
   ) { }
 
   async ngOnInit(): Promise<void> {
@@ -20,7 +20,7 @@ export class FooterComponent implements OnInit {
   }
 
   async getSocialMediaDetails(): Promise<any> {
-    return await this.socialMediaService.getSocialMediaDetails();
+    return await this.myDataService.getSocialMediaDetails();
   }
 
   visit(contact): void {

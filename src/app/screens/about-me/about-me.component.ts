@@ -1,3 +1,4 @@
+import { MyDataService } from './../../shared/services/my-data.service';
 import { ScrollingIds } from './../../shared/constants/scrolling-Id.constant';
 import { expertiesArea } from './../../shared/constants/typewriter.constants';
 import { Component, OnInit } from '@angular/core';
@@ -11,15 +12,18 @@ import Typewriter from 't-writer.js';
 export class AboutMeComponent implements OnInit {
   typewriterWords = expertiesArea;
   scrollingIds = ScrollingIds;
-  constructor() { }
+  constructor(
+    private myDataService: MyDataService
+  ) { }
 
   ngOnInit(): void {
     this.startTypewriter();
   }
 
-  downloadResume(): void {
+  async downloadResume(): Promise<void> {
+    const resume = await this.myDataService.getResume();
     const downloadLink = document.createElement('a');
-    downloadLink.href = 'assets/data/Resume_2021.pdf';
+    downloadLink.href = window.URL.createObjectURL(resume);
     downloadLink.download = 'Onkar_Date_Resume';
     downloadLink.click();
   }

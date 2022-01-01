@@ -1,4 +1,4 @@
-import { SkillsService } from './../../shared/services/skills.service';
+import { MyDataService } from './../../shared/services/my-data.service';
 import { Component, OnInit } from '@angular/core';
 import { ScrollingIds } from 'src/app/shared/constants/scrolling-Id.constant';
 
@@ -12,7 +12,7 @@ export class SkillsComponent implements OnInit {
   scrollingIds = ScrollingIds;
   skillsData = null;
   constructor(
-    private skillsService: SkillsService
+    private myDataService: MyDataService
   ) { }
 
   async ngOnInit(): Promise<void> {
@@ -20,7 +20,7 @@ export class SkillsComponent implements OnInit {
   }
 
   async getSkillsData(): Promise<any> {
-    return await this.skillsService.getSkillsData();
+    return await this.myDataService.getSkillsData();
   }
 
 }

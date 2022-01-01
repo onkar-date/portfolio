@@ -1,6 +1,7 @@
 export const UrlEndpoints = {
   projects: 'projects',
   skills: 'skills',
-  social: 'social'
+  social: 'social',
+  resume: 'resume'
 };
 
