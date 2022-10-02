@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-gh-pages": "ng build --prod --base-href \"https://onkar-date.github.io/portfolio/\"",
+    "deploy-gh-pages": "ngh --dir=dist/portfolio"
   },
   "private": true,
   "dependencies": {

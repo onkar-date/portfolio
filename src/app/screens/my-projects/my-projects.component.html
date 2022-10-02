@@ -3,10 +3,31 @@
         <h3 class="text-muted" [id]="scrollingIds.myProjects">My Projects</h3>
     </div>
 </div>
-<div class="row mt-2" *ngIf="projects?.length else projectsSpinner">
+
+<!-- Project Indicators -->
+<div class="row text-muted d-flex justify-content-end">
+    <!-- Client -->
+    <div class="col-lg-4 col-md-3">
+        <span class="project-indicator client-project"></span>
+        <span class="ml-2">Client Project</span>
+    </div>
+
+    <!-- Personal -->
+    <div class="col-md-3">
+        <span class="project-indicator personal-project"></span>
+        <span class="ml-2">Personal Project</span>
+    </div>
+</div>
+<div class="row mt-4" *ngIf="projects?.length else projectsSpinner">
     <div class="col-lg-4 col-md-6 mb-4" *ngFor="let project of projects">
         <div class="card-wrapper shadow" [class.project-unavailable]="!project.available">
             <div class="project-card">
+                <!-- Project Indicator -->
+                <div class="d-flex justify-content-end">
+                    <span
+                        class="project-indicator {{project.projectType === 'Client Project' ? 'client-project' : 'personal-project'}}">
+                    </span>
+                </div>
                 <div class="project-title text-muted">
                     <h4>{{project.title}}</h4>
                 </div>
@@ -16,7 +37,8 @@
                     </p>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <button *ngIf="project.available else unavailable" class="btn custom-btn-primary visit-project" (click)="openProject(project)">
+                    <button *ngIf="project.available else unavailable" class="btn custom-btn-primary visit-project"
+                        (click)="openProject(project)">
                         Visit
                     </button>
                 </div>
@@ -32,8 +54,8 @@
 <!-- Loading Spinner -->
 <ng-template #projectsSpinner>
     <div class="row skills-wrapper shadow d-flex justify-content-center">
-      <div class="spinner-grow skills-spinner mr-3" role="status" *ngFor="let i of [].constructor(4)">
-        <span class="sr-only">Loading...</span>
-      </div>
+        <div class="spinner-grow skills-spinner mr-3" role="status" *ngFor="let i of [].constructor(4)">
+            <span class="sr-only">Loading...</span>
+        </div>
     </div>
-  </ng-template>
+</ng-template>

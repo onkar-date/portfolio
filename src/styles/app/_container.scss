@@ -44,3 +44,16 @@
         width: var(--skill-level-percent);
     }
 }
+
+.project-indicator {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    &.client-project {
+        background-color: $custom-secondary;
+    }
+    &.personal-project {
+        background-color: $blue;
+    }
+}
